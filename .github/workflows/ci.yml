@@ -1,7 +1,7 @@
 name: Scheduled Python Script 1
 
 on:
-  main:  # Allows manual trigger of the workflow
+  push:  # Allows manual trigger of the workflow
 
 permissions:
   contents: read
