@@ -4,7 +4,7 @@ on:
   schedule:
     # Run the workflow at a specified time (Cron syntax)
     # For example, to run it every day at 00:00 UTC
-    - cron: '*/5 * * * *'
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: read
