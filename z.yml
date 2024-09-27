@@ -1,0 +1,30 @@
+name: Send Telegram Message
+
+on:
+  schedule:
+    # Run the job every 1 minute
+    - cron: "*/1 * * * *"
+
+  workflow_dispatch: # Allows manual triggering of the workflow as well
+
+jobs:
+  send_message_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # Use the Python version you need
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install telethon
+
+    - name: Run Telegram Script
+      run: |
+        python3 z.py  # Replace with the path to your Python script
