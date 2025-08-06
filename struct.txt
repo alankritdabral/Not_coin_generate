@@ -1,0 +1,56 @@
+ai_proctoring/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── config.py
+├── main.py
+├── logs/
+│   └── proctor.log
+├── models/
+│   ├── face_detector.onnx
+│   ├── gaze_tracker.onnx
+│   └── audio_classifier.onnx
+├── src/
+│   ├── __init__.py
+│   ├── authentication.py
+│   ├── face_detection.py
+│   ├── gaze_tracking.py
+│   ├── audio_processing.py
+│   ├── screen_monitoring.py
+│   ├── proctoring_manager.py
+│   └── utils.py
+└── tests/
+    ├── __init__.py
+    ├── test_authentication.py
+    ├── test_face_detection.py
+    ├── test_gaze_tracking.py
+    └── test_audio_processing.py
+
+
+Exam start:
+
+proctoring algorithm()
+    x = current_time
+
+    // Run face detection and audio processing in parallel
+    face_detection() + audio_processing() + object_detection()
+    if face == 0:
+        beep()
+        capture_photo()
+        output : no face is detected for x time
+    if face == 1:
+        proctoring(time=x)
+        if head_pose == 'center':
+            use_eye_gaze()
+        if head_pose != 'center' and head_pose==constant > 3 seconds :
+            beep()
+            capture_photo()
+            mark_as_suspicious()
+        if (mouth_detection() + audio_frequency(x_hertz)) > 3 seconds:
+            beep()
+            capture_photo()
+            mark_as_suspicious()
+    if face > 1:
+        beep()
+        capture_photo()
+        output : multiple faces are detected for x time
